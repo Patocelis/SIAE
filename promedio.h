@@ -8,6 +8,7 @@
 #include<deque>
 #include<iostream>
 #include "toolset.h"
+#include "Estadisticas.h"
 
 
 
@@ -15,11 +16,11 @@
 class promedio {
 public:
     promedio(int TotalNotas, std::string Operaciones,
-    std::deque<int> Notas, std::deque<float> Porcentajes);
+    std::deque<Nota> Notas, std::deque<float> Porcentajes);
     ~promedio();
     std::deque<operadores> ops;
     void entradaoperadores();
-    std::deque<int> notas;
+    std::deque<Nota> notas;
     std::string operaciones;
     std::deque<float> porcentajes;
     int totalnotas; //SE USARA COMO LIMITE MAXIMO DE OPERACIONES. PENDIENTE

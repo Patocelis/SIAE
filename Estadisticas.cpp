@@ -3,5 +3,3 @@
 //
 
 #include "Estadisticas.h"
-
-InfoAlumno aaa;

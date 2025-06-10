@@ -8,18 +8,22 @@
 #include<deque>
 #include<iostream>
 #include"toolset.h"
+#include "estadisticas.h"
 
 promedio::promedio(int TotalNotas, std::string Operaciones,
-    std::deque<int> Notas, std::deque<float> Porcentajes):
+    std::deque<Nota> Notas, std::deque<float> Porcentajes):
     totalnotas(TotalNotas), operaciones(std::move(Operaciones)),
     notas(std::move(Notas)),
     porcentajes(std::move(Porcentajes)){}
 //USAR std::move, los valores de entrada solo seran leidos, asi que no es necesario crear una copia.
 
 void promedio::entradaoperadores() {
+    ops.clear();
     for (int i=0; i < operaciones.length(); ++i) {
         operadores O_input;
-        O_input.op2 = notas[i]*(porcentajes[i]/100);
+        O_input.op2 = notas[i].nota * (porcentajes[i] / 100);
+       // std::cout << notas[i].nota << std::endl;
+        //No se por que, pero despues de agregar el print comentado esto funciona
         ops.push_back(O_input);
         std::cout << ops[i].op2 << std::endl;
     }
@@ -30,7 +34,7 @@ int promedio::notaFinal() {
     double NotaReturn = -69;
     operaciones += '0';
     std::cout << operaciones << std::endl;
-    for (int i=0; i < operaciones.length(); ++i) {
+    for (int i=0; i < operaciones.length(); ++i) { // >= y <= No querian funcionar
         if (operaciones[i]=='0') { //RETORNAR VALOR
             NotaReturn = ops[i].op1;
             break;
@@ -47,7 +51,7 @@ int promedio::notaFinal() {
         if (operaciones[i]=='3') { //SUMA
             ops[i].res = Sumar(ops[i].op1, ops[i].op2);
             ops[i+1].op1 = ops[i].res;
-            std::cout << "suma " << i << ": " << ops[i].res << std::endl;
+            std::cout << "suma " << i+1 << ": " << ops[i].op2 << std::endl;
         }
         if (operaciones[i]=='2') { //MULTIPLICACION
             ops[i].res = Multiplicar(ops[i].op1, ops[i].op2);

@@ -1,14 +1,17 @@
-//
-// Created by patri on 6/8/2025.
-//
+
 #ifndef ESTADISTICAS_H
 #define ESTADISTICAS_H
 #include <deque>
 #include <iostream>
-#include "toolset.h"
-#include "Promedio.h"
+
+/*LISTA DE HEADERS QUE NO SE PUEDEN INCLUIR ACA:
+ -promedio.h
+
+ */
+
 
 struct Nota {
+    int nota = 0;
     float ponderacion = 100;
     std::string Evaluacion = "Nombre no asignado";
 };
@@ -19,15 +22,16 @@ struct Asistencia {
 
 struct Asignatura {
     std::string nombre;
+    unsigned int IDRamo;
     std::deque<Nota> notas;
+    Asistencia asistencia;
 };
 
 
 struct InfoAlumno{
 
     std::string Nombre = "NOMBRE PLACEHOLDER";
-    Asignatura Ramo;
-    Asistencia AsistenciaAlumno;
+    std::deque<Asignatura> asignaturas;
 };
 
 
