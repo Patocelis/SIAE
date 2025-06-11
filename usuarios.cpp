@@ -4,3 +4,4 @@
 
 #include "usuarios.h"
 usuario::usuario(bool Profe, long Rut, int Contra):profesor(Profe), rut(Rut), contraseña(Contra) {}
+//Hola
