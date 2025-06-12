@@ -17,7 +17,8 @@ struct Nota {
 };
 
 struct Asistencia {
-    std::string test = "PLACEHOLDER ASISTENCIA";
+    std::string test = "Asistencia PLACEHOLDER";
+    //Strings no pueden ser NULL. Se pueden compilar pero fallan al correr
 };
 
 struct Asignatura {

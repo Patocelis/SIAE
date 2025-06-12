@@ -4,6 +4,7 @@
 #include"toolset.h"
 #include"promedio.h"
 #include"Estadisticas.h"
+#include <string>
 
 int main() {
 
@@ -23,12 +24,12 @@ int main() {
         std::cout << "INGRESAR NOTA " << i+1 << ": " << std::endl;
         std::cin >> NotaTemp.nota;
 
-       // std::cout << "INGRESAR PONDERACION " << i+1 << ": " << std::endl;
-       // std::cin >> NotaTemp.ponderacion;
+       std::cout << "INGRESAR PONDERACION " << i+1 << ": " << std::endl;
+       std::cin >> NotaTemp.ponderacion;
 
-
-        std::cout << "INGRESAR NOMBRE DE EVALUACION" << i+1 << " : " << std::endl;
-        std::cin >> NotaTemp.Evaluacion;
+        std::cin.ignore(); //Limpiar Buffer para permitir el uso del getline()
+        std::cout << "INGRESAR NOMBRE DE EVALUACION " << i+1 << ": " << std::endl;
+        std::getline(std::cin, NotaTemp.Evaluacion);
 
         TEST.asignaturas[0].notas.push_back(NotaTemp);
     }
@@ -49,9 +50,9 @@ int main() {
     std::cin >> Operaciones;
 
     promedio PromTest(6, Operaciones,
-        TEST.asignaturas[0].notas,
+        TEST.asignaturas[0].notas
         //TEST.asignaturas[0].notas[0]); //TODO: AGREGAR METODO PARA MOVER PONDERACION DESDE STRUCT A PROMEDIO
-        Porcentajes);
+        );
     int PromFinal = PromTest.notaFinal();
     std::cout << "PROMEDIO FINAL: " << PromFinal << std::endl;
 

@@ -16,14 +16,13 @@
 class promedio {
 public:
     promedio(int TotalNotas, std::string Operaciones,
-    std::deque<Nota> Notas, std::deque<float> Porcentajes);
+    std::deque<Nota> Notas);
     ~promedio();
     std::deque<operadores> ops;
     void entradaoperadores();
     std::deque<Nota> notas;
     std::string operaciones;
-    std::deque<float> porcentajes;
-    int totalnotas; //SE USARA COMO LIMITE MAXIMO DE OPERACIONES. PENDIENTE
+    int totalnotas;
     int notaFinal();
 
 };

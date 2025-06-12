@@ -1,7 +1,4 @@
 
-//
-// Created by patri on 6/7/2025.
-//
 
 #include "promedio.h"
 #include <cmath>
@@ -11,17 +8,16 @@
 #include "estadisticas.h"
 
 promedio::promedio(int TotalNotas, std::string Operaciones,
-    std::deque<Nota> Notas, std::deque<float> Porcentajes):
+    std::deque<Nota> Notas):
     totalnotas(TotalNotas), operaciones(std::move(Operaciones)),
-    notas(std::move(Notas)),
-    porcentajes(std::move(Porcentajes)){}
+    notas(std::move(Notas)){}
 //USAR std::move, los valores de entrada solo seran leidos, asi que no es necesario crear una copia.
 
 void promedio::entradaoperadores() {
     ops.clear();
     for (int i=0; i < operaciones.length(); ++i) {
         operadores O_input;
-        O_input.op2 = notas[i].nota * (porcentajes[i] / 100);
+        O_input.op2 = notas[i].nota * (notas[i].ponderacion / 100);
        // std::cout << notas[i].nota << std::endl;
         //No se por que, pero despues de agregar el print comentado esto funciona
         ops.push_back(O_input);
@@ -79,7 +75,6 @@ int promedio::notaFinal() {
 
 promedio::~promedio() {
     ops.clear();
-    porcentajes.clear();
 
 }
 
