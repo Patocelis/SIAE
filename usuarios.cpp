@@ -3,5 +3,5 @@
 //
 
 #include "usuarios.h"
-usuario::usuario(bool Profe, long Rut, int Contra):profesor(Profe), rut(Rut), contraseña(Contra) {}
+usuario::usuario(bool Profe, long Rut, int Contra):profesor(Profe), rut(Rut), contrasena(Contra) {}
 //Hola
