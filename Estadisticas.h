@@ -1,4 +1,3 @@
-
 #ifndef ESTADISTICAS_H
 #define ESTADISTICAS_H
 #include <deque>
@@ -19,6 +18,13 @@ struct Nota {
 struct Asistencia {
     std::string test = "Asistencia PLACEHOLDER";
     //Strings no pueden ser NULL. Se pueden compilar pero fallan al correr
+    std::string rol;
+    int totalclases;
+    int clasesasistidas;
+    int justificadas;
+    float asist;
+    //El deque con los roles tiene que ir en otoro lado porque no tendria sentido meterlo
+    //en este struct que es individual de cada alumno
 };
 
 struct Asignatura {
