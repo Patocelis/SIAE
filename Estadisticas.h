@@ -2,7 +2,7 @@
 #define ESTADISTICAS_H
 #include <deque>
 #include <iostream>
-
+#include <map>
 /*LISTA DE HEADERS QUE NO SE PUEDEN INCLUIR ACA:
  -promedio.h
 
@@ -23,8 +23,7 @@ struct Asistencia {
     int clasesasistidas;
     int justificadas;
     float asist;
-    //El deque con los roles tiene que ir en otoro lado porque no tendria sentido meterlo
-    //en este struct que es individual de cada alumno
+    std::map<std::string, std::deque<std::string>> asist_alumno;
 };
 
 struct Asignatura {
