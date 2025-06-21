@@ -7,12 +7,13 @@
 #include<string>
 
 class usuario{
+    std::string rol;
     bool profesor;
     std::string Nombre;
     long rut;
     std::string contrasena;
 public:
-    usuario(bool, long, int);
+    usuario(bool, long, std::string);
     void profecontra();
     std::string getNombre();
 };
