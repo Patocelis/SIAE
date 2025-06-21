@@ -10,7 +10,7 @@ class usuario{
     bool profesor;
     std::string Nombre;
     long rut;
-    int contrasena;
+    std::string contrasena;
 public:
     usuario(bool, long, int);
     void profecontra();
