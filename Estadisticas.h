@@ -43,12 +43,10 @@ struct Curso {
     std::string Sigla = "SiglaPlaceholder";
     int MetodoEvaluacion = 0;
     //Usar strings para calculo de notas segun metodo promedio.
-    std::map<std::string , std::deque<std::deque<Nota> > > nota_alumnos;
+    std::map<std::string, std::deque<Nota>> nota_alumnos;
     //Tiene que haber una forma mejor que esta, solucion temporal
     std::map<std::string, std::deque<std::string>> asist_alumno;
     //Codigo de asistencia conviene mas dentro de curso, para acceder mas facil
-
-
 };
 
 
