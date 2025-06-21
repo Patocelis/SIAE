@@ -13,7 +13,7 @@ class usuario{
     int contrasena;
 public:
     usuario(bool, long, int);
-    bool profe();
+    void profecontra();
     std::string getNombre();
 };
 
