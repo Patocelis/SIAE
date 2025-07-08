@@ -13,88 +13,14 @@
   <property name="windowTitle">
    <string>SIAE</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>100</y>
-      <width>441</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>381</width>
-       <height>251</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="Visualizadornotas"/>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>870</x>
-      <y>30</y>
-      <width>421</width>
-      <height>211</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="botonAsistenciaFijo">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>171</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Asitencia</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="botonNotasFijo">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>0</y>
-      <width>171</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Notas</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="botonCursosFijo">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>0</y>
-      <width>171</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Cursos</string>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>1205</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -121,7 +47,7 @@
   <widget class="QStatusBar" name="secion"/>
   <action name="actionSeci_n">
    <property name="text">
-    <string>Sesión</string>
+    <string>Seción</string>
    </property>
   </action>
   <action name="actionCerrar">
@@ -131,22 +57,5 @@
   </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>actionCerrar</sender>
-   <signal>triggered()</signal>
-   <receiver>SIAE</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>602</x>
-     <y>355</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>602</x>
-     <y>355</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

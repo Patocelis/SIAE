@@ -3,15 +3,17 @@
 #include<string>
 using namespace std;
 
-class usuario {
+class usuario{
 public:
     usuario(string, long, bool);
     string Nombre() const;
     long RUT() const;
-    bool Profesor() const;
+    bool Profesor()const;
     bool Contraseña(string intento);
+    void setContraseña(const std::string& nueva);
+    std::string getContraseña() const;
+    bool Contraseña(const std::string& intento) const;
 
-    bool operator<(const usuario& otro) const;
 private:
     string nombre;
     long rut;

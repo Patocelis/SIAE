@@ -3,7 +3,6 @@
 #include<string>
 #include<map>
 #include<vector>
-#include"clasesextra.h"
 #include<set>
 #include<QWidget>
 
@@ -16,31 +15,35 @@ struct notas
     float ponderacion;
 };
 
+class Sistema;
 
 class curso{
 public:
-    curso(string _nombre, string _sigla, usuario _profe,vector<notas>);
-    string Nombre(); //
-    string Sigla(); //
-    string Profesor(); //
-    map<usuario, vector<notas> > Nota(usuario); //
-    vector<float> est_asist(usuario);
-    void mod_nota(usuario);
-    void carga_masiva(string, QWidget *ventana);//Puta mierda
+    curso(string _nombre, string _sigla, long _profe,vector<notas> _plantilla);
+    string Nombre() const; //
+    string Sigla() const; //
+    long Profesor() const; //
+    map<long, vector<notas> > Nota(long); //
+    vector<float> est_asist(long);
+    void mod_nota(long,notas);
+    void cargar_plantilla(string ruta);//
     void genera_plantilla(QWidget* widget); //
-    map<string,set<usuario> > asis_profe(usuario); //
-    map<string, bool> asis_alumno(usuario en_linea,QWidget *ventana);//
-    void agregarAlumno(usuario u, const vector<notas>& n);
-    string get_nombre() const { return nombre; }
-    string get_sigla() const { return sigla; }
+    void carga_masiva(string ruta); //
+    map<string,set<long> > asis_profe(long); //
+    map<string, bool> asis_alumno(long en_linea,QWidget *ventana);//
+    void guardar_en_directorio(string) const;//
+    bool tiene_alumno(long) const;//
+    void set_sistema(Sistema* s);//
+    void cargar_asistencia(const std::string& ruta);
 private:
     vector<notas> plantilla;
     string nombre;
     string sigla;
-    string profesor;
-    map<usuario,vector<notas> > alumnos;
-    map<string,set<usuario> > asistencia;
+    long profesor;
+    map<long,vector<notas> > alumnos;
+    map<string,set<long> > asistencia;
     int total_seciones;
+    Sistema* sistema = nullptr;
 };
 
 #endif // CURSO_H
